@@ -161,7 +161,11 @@ h1 em, h2 em, h3 em { font-style: italic; color: var(--olive); }
 .carte__cap p { font-size: 13.5px; color: #4a4f53; margin-top: 4px; }
 .filtres { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
 .filtres span { font-size: 14px; padding: 9px 16px; border-radius: 999px; box-shadow: inset 0 0 0 1px rgba(51,56,61,.25); }
-.filtres span.on { background: var(--anthracite); color: #fff; box-shadow: none; }
+.filtres label { position: relative; cursor: pointer; }
+.filtres input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.filtres span { display: inline-block; }
+.filtres input:checked + span { background: var(--anthracite); color: #fff; box-shadow: none; }
+.filtres input:focus-visible + span { outline: 2px solid var(--rouille); outline-offset: 2px; }
 
 /* ---------- Expertises (liste) ---------- */
 .xp-liste { border-top: var(--line); }
@@ -404,3 +408,30 @@ h1 em, h2 em, h3 em { font-style: italic; color: var(--olive); }
 /* ---------- Bandeau de maquette (version de démonstration publique) ---------- */
 .bandeau-maquette { background: var(--olive); color: var(--ivoire); font-size: 12px; line-height: 1.4; text-align: center; padding: 7px 16px; letter-spacing: .02em; }
 .bandeau-maquette a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+
+/* ---------- Filtres de la page Projets ---------- */
+.section:has(.filtres input[value="bureaux"]:checked) .carte:not([data-cat="bureaux"]) { display: none; }
+.section:has(.filtres input[value="equipement-educatif"]:checked) .carte:not([data-cat="equipement-educatif"]) { display: none; }
+.section:has(.filtres input[value="equipement-sportif"]:checked) .carte:not([data-cat="equipement-sportif"]) { display: none; }
+.section:has(.filtres input[value="espace-public"]:checked) .carte:not([data-cat="espace-public"]) { display: none; }
+.section:has(.filtres input[value="renovation"]:checked) .carte:not([data-cat="renovation"]) { display: none; }
+.section:has(.filtres input[value="residentiel"]:checked) .carte:not([data-cat="residentiel"]) { display: none; }
+.section:has(.filtres input:not([value="tous"]):checked) .carte { grid-column: span 6; }
+
+/* ---------- Menu mobile ---------- */
+.hdr .menu-m summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 999px; box-shadow: inset 0 0 0 1px rgba(51,56,61,.3); }
+.hdr .menu-m summary::-webkit-details-marker { display: none; }
+.menu-m__f, .menu-m[open] .menu-m__o { display: none; }
+.menu-m[open] .menu-m__f { display: inline; }
+.menu-m__panneau { position: absolute; left: 10px; right: 10px; top: calc(100% + 8px); padding: 10px 22px 22px; border-radius: 18px; background: rgba(251, 249, 245, .98); box-shadow: var(--verre-ombre); max-height: calc(100vh - 140px); overflow-y: auto; display: flex; flex-direction: column; gap: 18px; }
+.hdr .menu-m nav { display: flex; flex-direction: column; gap: 0; margin: 0; font-size: 21px; font-family: var(--f-title); font-weight: 400; }
+.hdr .menu-m nav a { padding: 14px 0; border-bottom: var(--line); }
+.hdr .menu-m .pill { display: inline-flex; align-self: flex-start; }
+.menu-m__tel { font-weight: 600; font-size: 15px; }
+.form__note { color: var(--olive); font-weight: 600; }
+.folio__r { white-space: nowrap; }
+@media (max-width: 860px) {
+  .lien { position: relative; }
+  .lien::before { content: ""; position: absolute; inset: -12px -6px; }
+  .bandeau-maquette a { padding: 6px 0; }
+}
