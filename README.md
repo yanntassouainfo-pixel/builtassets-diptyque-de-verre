@@ -40,7 +40,18 @@ Le papier pour lire, le verre pour la photo.
 - **Photos des projets** : chargées depuis builtassets.com. Plusieurs sont des rendus 3D fournis par Built Assets.
 - **Photos d'illustration** : signalées comme telles sur les pages, elles ne montrent pas des projets de Built Assets.
 - **Polices** : Archivo et Newsreader, sous licence SIL Open Font License.
-- **Formulaire de contact** : non branché sur cette démonstration.
+- **Formulaire de contact** : non branché sur cette démonstration. À l'envoi, un message rappelle que rien n'est transmis.
+
+## Ce qui fonctionne dans la démonstration
+
+- **Le menu sur téléphone et tablette** : il s'ouvre sans JavaScript et contient les rubriques, le bouton de contact et le numéro de téléphone.
+- **Les filtres de la page Projets** : ils trient les 9 réalisations par type (résidentiel, bureaux, rénovation…).
+- **Le sélecteur de langue** : FR est la langue active. EN est grisé, car la version anglaise sera produite à la mise en production.
+
+## Historique
+
+- **14/10/2026** : présentation de la direction « Diptyque de verre » ; validation par Built Assets le 16/10.
+- **04/11/2026** : mise en ligne de la démonstration, puis correctifs mobiles (menu, filtres, formulaire, zones tactiles) et sélecteur de langue.
 
 ## Ouvrir le site en local
 
