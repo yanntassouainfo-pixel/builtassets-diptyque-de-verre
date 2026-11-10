@@ -376,9 +376,9 @@ h1 em, h2 em, h3 em { font-style: italic; color: var(--olive); }
 /* ---------- Écrans intermédiaires ---------- */
 .chiffres b { white-space: nowrap; font-size: clamp(28px, 2.6vw, 38px); }
 .hdr .pill { white-space: nowrap; }
-@media (max-width: 1240px) { .hdr .lang { display: none; } .hdr nav { gap: 20px; } .hdr__in { gap: 24px; } }
+@media (max-width: 1240px) { .hdr nav { gap: 20px; } .hdr__in { gap: 24px; } }
 @media (max-width: 1080px) and (min-width: 861px) {
-  .hdr nav { display: none; } .hdr .menu-m { display: block; margin-left: auto; }
+  .hdr nav, .hdr .lang { display: none; } .hdr .menu-m { display: block; margin-left: auto; }
   .tuiles { grid-template-columns: 1fr 1fr; } .equipe-g { grid-template-columns: repeat(3, 1fr); }
   .lecture { grid-template-columns: 1fr; } .aparte { position: static; }
 }
@@ -439,3 +439,8 @@ h1 em, h2 em, h3 em { font-style: italic; color: var(--olive); }
 /* ---------- Sélecteur de langue (version anglaise pas encore produite) ---------- */
 .hdr .lang b { font-weight: 600; color: var(--anthracite); }
 .lang__off { opacity: .45; cursor: help; }
+
+/* ---------- Sélecteur de langue, version anglaise en ligne (10/11/2026) ---------- */
+.hdr .lang a { color: inherit; text-decoration: none; }
+.hdr .lang a:hover { color: var(--anthracite); text-decoration: underline; text-underline-offset: 3px; }
+.menu-m__lang { font-size: 14px; text-decoration: underline; text-underline-offset: 3px; }
